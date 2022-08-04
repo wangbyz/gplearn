@@ -860,11 +860,11 @@ class SymbolicRegressor(BaseSymbolic, RegressorMixin):
 
         X = check_array(X)
         _, n_features = X.shape
-        if self.n_features_in_ != n_features:
-            raise ValueError('Number of features of the model must match the '
-                             'input. Model n_features is %s and input '
-                             'n_features is %s.'
-                             % (self.n_features_in_, n_features))
+        # if self.n_features_in_ != n_features:
+        #     raise ValueError('Number of features of the model must match the '
+        #                      'input. Model n_features is %s and input '
+        #                      'n_features is %s.'
+        #                      % (self.n_features_in_, n_features))
 
         y = self._program.execute(X)
 
@@ -1156,11 +1156,11 @@ class SymbolicClassifier(BaseSymbolic, ClassifierMixin):
 
         X = check_array(X)
         _, n_features = X.shape
-        if self.n_features_in_ != n_features:
-            raise ValueError('Number of features of the model must match the '
-                             'input. Model n_features is %s and input '
-                             'n_features is %s.'
-                             % (self.n_features_in_, n_features))
+        # if self.n_features_in_ != n_features:
+        #     raise ValueError('Number of features of the model must match the '
+        #                      'input. Model n_features is %s and input '
+        #                      'n_features is %s.'
+        #                      % (self.n_features_in_, n_features))
 
         scores = self._program.execute(X)
         proba = self._transformer(scores)
